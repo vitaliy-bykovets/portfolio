@@ -1,9 +1,40 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const fs = require('fs');
 
 const mode = process.env.NODE_ENV || 'production';
 const isProd = mode === 'production';
+
+const HTMLPluginOptions = {
+  minify: {
+    removeComments: true,
+    collapseWhitespace: true,
+    removeRedundantAttributes: true,
+    useShortDoctype: true,
+    removeEmptyAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    removeScriptTypeAttributes: true,
+    keepClosingSlash: true,
+    minifyJS: true,
+    minifyCSS: true,
+    minifyURLs: true
+  }
+};
+
+const getHTMLPlugins = (templateDir) => {
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+
+  return templateFiles.map(item => {
+    const [name, extension] = item.split('.');
+    
+    return new HtmlWebpackPlugin({
+      filename: `${name}.${extension}`,
+      template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+      ...HTMLPluginOptions,
+    });
+  })
+};
 
 module.exports = {
   mode,
@@ -38,7 +69,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: isProd
+              hmr: isProd,
             },
           },
           {
@@ -77,7 +108,7 @@ module.exports = {
 
       // Font loader
       {
-        test: /\.(woff2|woff)$/,
+        test: /\.(ttf|woff2|woff)$/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -90,27 +121,12 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        removeScriptTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true
-      }
-    }),
+    ...getHTMLPlugins('src/views'),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
       fallback: 'style-loader',
-      use: [{loader: 'css-loader', options: {minimize: isProd}}],
+      use: [{ loader: 'css-loader', options: { minimize: isProd } }],
     }),
   ],
 
