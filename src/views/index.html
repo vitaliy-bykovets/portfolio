@@ -23,31 +23,69 @@
         <h1>
           <a href="/">Vitaliy Bykovets</a>
         </h1>
-        <nav>
+        <nav id="js-hover">
           <div class="figure">
-            <span class="triangle"></span>
-            <span class="triangle triangle-filled"></span>
-            <span class="triangle"></span>
+            <div class="symbols">
+              <span class="triangle"></span>
+              <span class="triangle triangle-filled"></span>
+              <span class="triangle"></span>
+            </div>
+            <div class="drops">
+              <span data-drop="0" class="drop"></span>
+              <span data-drop="1" class="drop"></span>
+              <span data-drop="2" class="drop"></span>
+            </div>
           </div>
           <ul>
             <li>
-              <a href="./projects.html">Projects</a>
+              <a data-link="0" data-offset="-85;-55" href="./projects.html">Projects</a>
             </li>
             <li>
-              <a href="about.html">About</a>
+              <a data-link="1" data-offset="-85;-55" href="about.html">About</a>
             </li>
             <li>
-              <a href="contact.html">Contact</a>
+              <a data-link="2" data-offset="-85;-55" href="contact.html">Contact</a>
             </li>
           </ul>
         </nav>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
       </section>
     </div>
   </main>
   <div class="transition">
-    <div class="transition-anim"></div>
-    <div class="transition-content"></div>
+    <div class="transition-animation"></div>
   </div>
+  <script>
+    const container = document.getElementById('js-hover');
+    const links = container.querySelectorAll('a[data-link]');
+    const drops = container.querySelectorAll('span[data-drop]');
+
+    links.forEach(function(link) {
+      link.addEventListener('mouseenter', function(e) {
+        getDrop(e).classList.add('is-moved');
+      });
+
+      link.addEventListener('mouseleave', function(e) {
+        getDrop(e).classList.remove('is-moved');
+      })
+    });
+
+    function getDrop(event) {
+      return drops[getDataLinkAttribute(event)];
+    }
+
+    function getDataLinkAttribute(event) {
+     return event.currentTarget.getAttribute('data-link');
+    }
+  </script>
 </body>
 
 </html>
