@@ -18,112 +18,132 @@
 
 <body>
   <main class="js-content-insert">
-    <div class="full-view">
-      <section class="home">
+    <div class="projects">
+      <section class="header content">
+        <a href="/" title="Return to Home page">back</a>
         <h1>Vitaliy Bykovets</h1>
-        <nav>
-          <div class="figure">
-            <span class="triangle"></span>
-            <span class="triangle triangle-filled"></span>
-            <span class="triangle"></span>
+        <div class="divider-circle"></div>
+        <p>Projects</p>
+  <!--        <nav>-->
+  <!--          <div class="figure">-->
+  <!--            <span class="triangle"></span>-->
+  <!--            <span class="triangle triangle-filled"></span>-->
+  <!--            <span class="triangle"></span>-->
+  <!--          </div>-->
+  <!--          <ul>-->
+  <!--            <li class="text-right">-->
+  <!--              <a href="./projects.html">Projects</a>-->
+  <!--            </li>-->
+  <!--            <li class="text-center offset">-->
+  <!--              <a href="./contacts.html">Contact</a>-->
+  <!--            </li>-->
+  <!--            <li class="text-left">-->
+  <!--              <a href="about.html">About</a>-->
+  <!--            </li>-->
+  <!--          </ul>-->
+  <!--        </nav>-->
+        </section>
+      <section class="actions content">
+        <a href="/file.pdf">Download CV</a>
+        <div class="filters">
+          <div class="radio-btn">
+            <input id="all" type="radio" name="filter" checked>
+            <label for="all">All</label>
           </div>
-          <ul>
-            <li class="text-right">
-              <a href="./projects.html">Projects</a>
-            </li>
-            <li class="text-center offset">
-              <a href="./contacts.html">Contact</a>
-            </li>
-            <li class="text-left">
-              <a href="about.html">About</a>
-            </li>
-          </ul>
-        </nav>
-      </section>
-      <section>
-        <div class="content">
-          <div class="project">
-            <picture></picture>
-            <div class="project-body">
-              <h4>Private Goods</h4>
-
-              <div class="project-desc">
-                SPA based on the latest Angular, Electron and IndexedDB (to implement offline experience)
-              </div>
-              <div class="project-resp">
-                develop new features, layout making using design mock-ups, write unit tests
-              </div>
-              <div class="project-tech">
-                HTML5, CSS3, Angular 6, RxJs, Angular Material, Dexie (IndexedDB), TypeScript, JavaScript (ES6), Git
-              </div>
-            </div>
+          <div class="radio-btn">
+            <input id="development" type="radio" name="filter">
+            <label for="development">Development</label>
           </div>
-          <div class="project">
-            <picture></picture>
-            <div class="project-body">
-              <h4>Private Goods</h4>
-
-              <div class="project-desc">
-                SPA for system to manage energy consumption for energy companies: gather data from metrics, manage energy usage, generate bills, reports, build charts with analytics, build schemes with equipment.
-              </div>
-              <div class="project-resp">
-                develop new features, layout making using design mock-ups.
-              </div>
-              <div class="project-tech">
-                HTML5, CSS3, Angular 6, NGRX, RxJs, Konva.js, TypeScript, JavaScript (ES6), Git
-              </div>
-            </div>
-          </div>
-          <div class="project">
-            <picture></picture>
-            <div class="project-body">
-              <h4>FuseMap</h4>
-
-              <div class="project-desc">
-                Web portal for smart equipment (plugs, thermostats, lights and other). It has a statistic, information about buildings, possibilities to manage smart equipment
-              </div>
-              <div class="project-resp">
-                develop functionality from scratch, layout making using design mock-ups, feature integration: implementing charts with analytics, export data in Excel format, upload floor plans and, placing and correction of components on these plans.
-              </div>
-              <div class="project-tech">
-                HTML5, CSS3, Angular 5, TypeScript, JavaScript (ES6), Git, NGRX, Nrwl, RxJs, HighCharts, ExcelJs
-              </div>
-            </div>
-          </div>
-          <div class="project">
-            <picture></picture>
-            <div class="project-body">
-              <h4>MsFit (Coach Platform)</h4>
-
-              <div class="project-desc">
-                Web portal for fitness coaches. MsFit Mobile application for a woman to create her own workout program and diet. Web portal helps for personal trainers to control fitness exercises, create fitness exercises, create diet programs and control a process of coachee progress.
-              </div>
-              <div class="project-resp">
-                develop functionality from scratch, layout making using design mock-ups, feature integration, implementation of optimizing algorithms, connection implementing between client and server side
-              </div>
-              <div class="project-tech">
-                HTML5, CSS3, Angular 4, TypeScript, JavaScript (ES6), Git, multi languages.
-              </div>
-            </div>
-          </div>
-          <div class="project">
-            <picture></picture>
-            <div class="project-body">
-              <h4>xGSchedule</h4>
-
-              <div class="project-desc">
-                Scheduling system for linear, on-demand and digital platforms. This integrated system helps to plan schedules across multiple linear, nonlinear, web and mobile platforms with streamlined validation against content and usage rights, as well as organizational business rules.
-              </div>
-              <div class="project-resp">
-                support available functionality, develop new features, rewrite old components from AngularJS to Angular.
-              </div>
-              <div class="project-tech">
-                HTML5, CSS3, AngularJS, Angular 5, TypeScript, JavaScript (ES6), Git
-              </div>
-            </div>
+          <div class="radio-btn">
+            <input id="design" type="radio" name="filter">
+            <label for="design">Design</label>
           </div>
         </div>
       </section>
+      <section>
+          <div class="content">
+            <div class="project">
+              <picture></picture>
+              <div class="project-body">
+                <h4>Private Goods</h4>
+
+                <div class="project-desc">
+                  SPA based on the latest Angular, Electron and IndexedDB (to implement offline experience)
+                </div>
+                <div class="project-resp">
+                  develop new features, layout making using design mock-ups, write unit tests
+                </div>
+                <div class="project-tech">
+                  HTML5, CSS3, Angular 6, RxJs, Angular Material, Dexie (IndexedDB), TypeScript, JavaScript (ES6), Git
+                </div>
+              </div>
+            </div>
+            <div class="project">
+              <picture></picture>
+              <div class="project-body">
+                <h4>Private Goods</h4>
+
+                <div class="project-desc">
+                  SPA for system to manage energy consumption for energy companies: gather data from metrics, manage energy usage, generate bills, reports, build charts with analytics, build schemes with equipment.
+                </div>
+                <div class="project-resp">
+                  develop new features, layout making using design mock-ups.
+                </div>
+                <div class="project-tech">
+                  HTML5, CSS3, Angular 6, NGRX, RxJs, Konva.js, TypeScript, JavaScript (ES6), Git
+                </div>
+              </div>
+            </div>
+            <div class="project">
+              <picture></picture>
+              <div class="project-body">
+                <h4>FuseMap</h4>
+
+                <div class="project-desc">
+                  Web portal for smart equipment (plugs, thermostats, lights and other). It has a statistic, information about buildings, possibilities to manage smart equipment
+                </div>
+                <div class="project-resp">
+                  develop functionality from scratch, layout making using design mock-ups, feature integration: implementing charts with analytics, export data in Excel format, upload floor plans and, placing and correction of components on these plans.
+                </div>
+                <div class="project-tech">
+                  HTML5, CSS3, Angular 5, TypeScript, JavaScript (ES6), Git, NGRX, Nrwl, RxJs, HighCharts, ExcelJs
+                </div>
+              </div>
+            </div>
+            <div class="project">
+              <picture></picture>
+              <div class="project-body">
+                <h4>MsFit (Coach Platform)</h4>
+
+                <div class="project-desc">
+                  Web portal for fitness coaches. MsFit Mobile application for a woman to create her own workout program and diet. Web portal helps for personal trainers to control fitness exercises, create fitness exercises, create diet programs and control a process of coachee progress.
+                </div>
+                <div class="project-resp">
+                  develop functionality from scratch, layout making using design mock-ups, feature integration, implementation of optimizing algorithms, connection implementing between client and server side
+                </div>
+                <div class="project-tech">
+                  HTML5, CSS3, Angular 4, TypeScript, JavaScript (ES6), Git, multi languages.
+                </div>
+              </div>
+            </div>
+            <div class="project">
+              <picture></picture>
+              <div class="project-body">
+                <h4>xGSchedule</h4>
+
+                <div class="project-desc">
+                  Scheduling system for linear, on-demand and digital platforms. This integrated system helps to plan schedules across multiple linear, nonlinear, web and mobile platforms with streamlined validation against content and usage rights, as well as organizational business rules.
+                </div>
+                <div class="project-resp">
+                  support available functionality, develop new features, rewrite old components from AngularJS to Angular.
+                </div>
+                <div class="project-tech">
+                  HTML5, CSS3, AngularJS, Angular 5, TypeScript, JavaScript (ES6), Git
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
     </div>
   </main>
   <div class="transition">
