@@ -34,10 +34,28 @@ a {
   }
 }
 
+p {
+  margin: 0;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: $accent-color;
+  margin: 0;
+}
+
+.btn {
+  background-color: $accent-color;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: rem(14px);
+}
+
 .divider-circle {
-  width: 6px;
-  height: 6px;
-  border-radius: 6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
   margin: 3px 15px;
   display: inline-flex;
   background-color: $primary-color;
@@ -168,19 +186,46 @@ a {
 
 // PROJECTS ---
 .projects {
+
+
+
+}
+
+.header {
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+
   h1 {
     font-size: 16px;
     font-weight: 400;
     margin: 0;
   }
 
-  .header {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: baseline;
+  .divider-circle {
+    margin: 3px 15px 0;
   }
 }
 
+.footer {
+  margin-bottom: 30px;
+  font-size: rem(14px);
+  padding-top: 30px;
+
+  nav {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+
+    & > li:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
 
 .actions {
   display: flex;

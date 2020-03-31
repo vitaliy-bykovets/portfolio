@@ -33,6 +33,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.4.1",
     "modern-normalize": "^0.6.0"
   }
 }

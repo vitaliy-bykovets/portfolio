@@ -1,4 +1,11 @@
 import Conversion from './vendor/conversion.min';
+import Glide from '@glidejs/glide'
+
+new Glide('.glide').mount();
+
+window.addEventListener('load', () => {
+  document.getElementById("copyright-year").innerHTML = String(new Date().getFullYear());
+});
 
 // init conversion.js
 // var conversion = new Conversion({
@@ -46,3 +53,4 @@ import Conversion from './vendor/conversion.min';
 //   transitionAnimLayer.addEventListener('animationend', animationEnd);
 //   transition.classList.add('is-processing', 'is-leave');
 // });
+
