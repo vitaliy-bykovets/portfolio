@@ -1,7 +1,7 @@
 import Conversion from './vendor/conversion.min';
 import Glide from '@glidejs/glide'
 
-new Glide('.glide').mount();
+// new Glide('.glide').mount();
 
 window.addEventListener('load', () => {
   document.getElementById("copyright-year").innerHTML = String(new Date().getFullYear());

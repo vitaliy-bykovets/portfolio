@@ -1,0 +1,16 @@
+button {
+  outline: none;
+  border: none;
+
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+}
+
+.btn {
+  background-color: $accent-color;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: rem(14px);
+  font-weight: 300;
+}

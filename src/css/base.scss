@@ -45,12 +45,6 @@ hr {
   margin: 0;
 }
 
-.btn {
-  background-color: $accent-color;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: rem(14px);
-}
 
 .divider-circle {
   width: 4px;
@@ -391,4 +385,12 @@ hr {
 @keyframes sideLeft {
   0% { transform: scale(0) }
   100% { transform: scale(2) }
+}
+
+.social-list {
+  display: flex;
+
+  & > li:not(:last-child) {
+    margin-right: 20px;
+  }
 }
