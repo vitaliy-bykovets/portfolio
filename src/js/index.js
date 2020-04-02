@@ -1,7 +1,5 @@
 import Conversion from './vendor/conversion.min';
-import Glide from '@glidejs/glide'
-
-// new Glide('.glide').mount();
+import baguetteBox from 'baguettebox.js';
 
 window.addEventListener('load', () => {
   document.getElementById("copyright-year").innerHTML = String(new Date().getFullYear());

@@ -1,6 +1,7 @@
 button {
   outline: none;
   border: none;
+  min-width: 120px;
 
   &:not([disabled]) {
     cursor: pointer;

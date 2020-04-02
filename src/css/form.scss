@@ -33,3 +33,19 @@ textarea {
   width: 100%;
   resize: none;
 }
+
+::placeholder {
+  color: #839094;
+  font-weight: 200;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #839094;
+  font-weight: 200;
+}
+
+::-ms-input-placeholder {
+  color: #839094;
+  font-weight: 200;
+}
