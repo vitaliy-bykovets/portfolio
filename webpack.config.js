@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'production';
 const isProd = mode === 'production';
@@ -84,25 +85,27 @@ module.exports = {
 
       // Image loader
       {
-        test: /\.(jpe?g|png|webp|gif|svg|ico)$/i,
+        test: /\.(jpe?g|png|webp|gif|svg|ico)$/,
         use: [
           {
-            loader: 'img-loader',
-            options: {
-              outputPath: 'images/',
-              plugins: [
-                require('imagemin-mozjpeg')({
-                  progressive: true
-                }),
-                require('imagemin-pngquant')({
-                  floyd: 0.5,
-                  speed: 5
-                }),
-                require('imagemin-webp'),
-                require('imagemin-svgo')
-              ]
-            }
-          }
+            loader: 'file-loader',
+          },
+          // {
+          //   loader: 'img-loader',
+          //   options: {
+          //     plugins: [
+          //       require('imagemin-mozjpeg')({
+          //         progressive: true
+          //       }),
+          //       require('imagemin-pngquant')({
+          //         floyd: 0.5,
+          //         speed: 5
+          //       }),
+          //       require('imagemin-webp'),
+          //       require('imagemin-svgo')
+          //     ]
+          //   }
+          // }
         ]
       },
 
@@ -128,6 +131,7 @@ module.exports = {
       fallback: 'style-loader',
       use: [{ loader: 'css-loader', options: { minimize: isProd } }],
     }),
+    new CleanWebpackPlugin(),
   ],
 
 };

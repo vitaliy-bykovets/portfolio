@@ -30,7 +30,7 @@ a {
   transition: color 250ms ease-in-out;
 
   &:hover {
-    color: #839094;
+    color: $secondary-color;
   }
 }
 
@@ -252,15 +252,7 @@ hr {
   }
 }
 
-.project {
-  margin-bottom: rem(35px);
 
-  h4 {
-    margin: 0 0 rem(5px);
-    font-size: rem(18px);
-    font-weight: 400;
-  }
-}
 
 
 .radio-btn {
@@ -305,14 +297,14 @@ hr {
     }
 
     &:hover {
-      color: #839094;
+      color: $secondary-color;
 
       &:before {
-        border-color: #839094;
+        border-color: $secondary-color;
       }
 
       &:after {
-        background-color: #839094;
+        background-color: $secondary-color;
         transform: scale(1);
       }
     }

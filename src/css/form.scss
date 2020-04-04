@@ -12,7 +12,7 @@
 }
 
 input {
-  border: 1px solid #839094;
+  border: 1px solid $secondary-color;
   outline: none;
   font-size: rem(14px);
   font-weight: 300;
@@ -23,7 +23,7 @@ input {
 }
 
 textarea {
-  border: 1px solid #839094;
+  border: 1px solid $secondary-color;
   font-size: rem(14px);
   font-weight: 300;
   line-height: rem(24px);
@@ -35,17 +35,17 @@ textarea {
 }
 
 ::placeholder {
-  color: #839094;
+  color: $secondary-color;
   font-weight: 200;
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: #839094;
+  color: $secondary-color;
   font-weight: 200;
 }
 
 ::-ms-input-placeholder {
-  color: #839094;
+  color: $secondary-color;
   font-weight: 200;
 }

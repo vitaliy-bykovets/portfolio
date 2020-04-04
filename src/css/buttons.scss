@@ -14,4 +14,8 @@ button {
   border-radius: 5px;
   font-size: rem(14px);
   font-weight: 300;
+  min-height: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
