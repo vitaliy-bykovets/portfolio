@@ -12,6 +12,7 @@ body {
   font-size: $body-font-size;
   font-weight: 200;
   line-height: $body-line-height;
+  overflow-x: hidden;
 
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;

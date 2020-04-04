@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'production';
 const isProd = mode === 'production';
@@ -85,27 +86,31 @@ module.exports = {
 
       // Image loader
       {
-        test: /\.(jpe?g|png|webp|gif|svg|ico)$/,
+        test: /\.(jpe?g|png|webp|gif|svg|ico)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
+            options: {
+              outputPath: 'images/',
+              name: '[name].[ext]',
+            }
           },
-          // {
-          //   loader: 'img-loader',
-          //   options: {
-          //     plugins: [
-          //       require('imagemin-mozjpeg')({
-          //         progressive: true
-          //       }),
-          //       require('imagemin-pngquant')({
-          //         floyd: 0.5,
-          //         speed: 5
-          //       }),
-          //       require('imagemin-webp'),
-          //       require('imagemin-svgo')
-          //     ]
-          //   }
-          // }
+          {
+            loader: 'img-loader',
+            options: {
+              plugins: [
+                require('imagemin-mozjpeg')({
+                  progressive: true
+                }),
+                require('imagemin-pngquant')({
+                  floyd: 0.5,
+                  speed: 5
+                }),
+                require('imagemin-webp'),
+                require('imagemin-svgo')
+              ]
+            }
+          }
         ]
       },
 
@@ -132,6 +137,12 @@ module.exports = {
       use: [{ loader: 'css-loader', options: { minimize: isProd } }],
     }),
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/images',
+        to: 'images'
+      }
+    ])
   ],
 
 };

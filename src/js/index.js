@@ -1,6 +1,8 @@
 import Conversion from './vendor/conversion.min';
 import baguetteBox from 'baguettebox.js';
 
+baguetteBox.run('.gallery');
+
 window.addEventListener('load', () => {
   document.getElementById("copyright-year").innerHTML = String(new Date().getFullYear());
 });
