@@ -1,3 +1,6 @@
+@import "variables";
+@import "tools";
+
 button {
   outline: none;
   border: none;
@@ -18,4 +21,10 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.btn-icon {
+  .icon {
+    margin-left: 10px;
+  }
 }

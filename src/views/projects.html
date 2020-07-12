@@ -8,13 +8,14 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicons/favicon-16x16.png">
 
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body class="is-overflow">
   <main class="js-content-insert">
     <div class="projects">
       <header class="header content">
@@ -23,18 +24,18 @@
         <span>Projects</span>
       </header>
       <section class="actions content">
-        <a class="btn" href="/file.pdf">Download CV</a>
+        <a class="btn btn-icon" href="/file.pdf">Download CV <span class="icon icon-cloud-download"></span></a>
         <div class="filters">
           <div class="radio-btn">
-            <input id="all" type="radio" name="filter" checked>
+            <input id="all" type="radio" name="filter" checked data-toggle="all">
             <label for="all">All</label>
           </div>
           <div class="radio-btn">
-            <input id="development" type="radio" name="filter">
+            <input id="development" type="radio" name="filter" data-toggle="development">
             <label for="development">Development</label>
           </div>
           <div class="radio-btn">
-            <input id="design" type="radio" name="filter">
+            <input id="design" type="radio" name="filter" data-toggle="design">
             <label for="design">Design</label>
           </div>
         </div>
@@ -51,10 +52,10 @@
                 </div>
 
                 <div class="gallery">
-                  <a href="./images/projects/01/minty-01.jpg" title="Open Gallery">
+                  <a href="./images/projects/01/minty-01.jpg">
                     <img src="./images/projects/01/thumb-minty-01.jpg" alt="Minty design">
                   </a>
-                  <a href="./images/projects/01/minty-02.jpg" title="Open Gallery">
+                  <a href="./images/projects/01/minty-02.jpg">
                     <img src="./images/projects/01/thumb-minty-02.jpg" alt="Minty design">
                   </a>
                 </div>
@@ -70,8 +71,7 @@
                   CRM system based on the latest Angular. The App should provide offline user experience and update data on the server when the app goes online. Also this system is built as a desktop app using Electorn framework. The App helps to manage business contacts, increase sales, work with analytics, support multilanguage and different user roles.
                 </div>
                 <div class="project-tech">
-                  <strong>Stack:</strong> egrate multilanguage functionality, cover a functional code with unit tests
-                  Tools and technologies: HTML5, CSS3, Angular 9, RxJs, Angular Material, Dexie (IndexedDB - to save data offline), TypeScript, JavaScript (ES6), Git
+                  <strong>Stack:</strong> HTML5, CSS3, Angular 9, RxJs, Angular Material, Dexie (IndexedDB - to save data offline), TypeScript, JavaScript (ES6), Git
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@
               <time datetime="2018-09-01">2018</time>
               <picture></picture>
               <div class="project-body">
-                <h4>FuseMap</h4>
+                <h4>FuseMap <a href="https://www.fusemap.com/client/sign-in" target="_blank" title="Open FuseMap"><span class="icon icon-link"></span></a></h4>
 
                 <div class="project-desc">
                   Web portal for smart equipment (plugs, thermostats, lights and other). It has a statistic, information about buildings, possibilities to manage smart equipment
@@ -107,7 +107,7 @@
               <time datetime="2017-12-01">2017</time>
               <picture></picture>
               <div class="project-body">
-                <h4>MsFit (Coach Platform)</h4>
+                <h4>MsFit (Coach Platform) <a href="http://coach.msfit-sa.com/#/login" target="_blank" title="Open MsFit"><span class="icon icon-link"></span></a></h4>
 
                 <div class="project-desc">
                   Web portal for fitness coaches. MsFit Mobile application for a woman to create her own workout program and diet. Web portal helps for personal trainers to control fitness exercises, create fitness exercises, create diet programs and control a process of coachee progress.
@@ -132,7 +132,7 @@
             </div>
           </div>
         </section>
-    </div>
+      </div>
     <footer class="footer">
       <div class="content">
         <hr>

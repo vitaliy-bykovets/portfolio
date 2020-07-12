@@ -46,6 +46,19 @@ hr {
   margin: 0;
 }
 
+.is-hide {
+  display: none;
+}
+
+.is-show {
+  display: block;
+}
+
+.is-overflow {
+  overflow-y: scroll;
+}
+
+
 
 .divider-circle {
   width: 4px;
@@ -122,7 +135,6 @@ hr {
       transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1);
       z-index: 2;
 
-
       &:first-child{
         margin-top: -$drop-height - $drop-height / 2 - $drop-gap;
       }
@@ -179,12 +191,6 @@ hr {
   padding: 0 rem(35px);
 }
 
-// PROJECTS ---
-.projects {
-
-
-
-}
 
 // CONTACT ---
 .contact-field {
@@ -198,7 +204,6 @@ hr {
     margin-bottom: 10px;
   }
 }
-
 
 .header {
   margin: 30px auto;
@@ -256,82 +261,7 @@ hr {
 
 
 
-.radio-btn {
-  input {
-    visibility: hidden;
-    position: absolute;
-  }
 
-  label {
-    cursor: pointer;
-    padding-left: 18px;
-    position: relative;
-    transition: color 200ms ease-in-out;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      margin-top: -6px;
-      display: block;
-      height: 12px;
-      width: 12px;
-      border: 1px solid $primary-color;
-      border-radius: 16px;
-      transition: border-color 250ms ease-in-out;
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 3px;
-      margin-top: -3px;
-      display: block;
-      height: 6px;
-      width: 6px;
-      border-radius: 4px;
-      background-color: $primary-color;
-      transform: scale(0);
-      transition: transform 250ms ease-in-out, background-color 250ms ease-in-out;
-    }
-
-    &:hover {
-      color: $secondary-color;
-
-      &:before {
-        border-color: $secondary-color;
-      }
-
-      &:after {
-        background-color: $secondary-color;
-        transform: scale(1);
-      }
-    }
-  }
-
-  input:checked + label {
-    cursor: default;
-
-    &:after {
-      transform: scale(1);
-    }
-
-    &:hover {
-      color: $primary-color;
-
-      &:before {
-        border-color: $primary-color;
-      }
-
-      &:after {
-        background-color: $primary-color;
-        transform: scale(1);
-      }
-    }
-  }
-}
 
 // CONTACT ---
 .contact {

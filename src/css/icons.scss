@@ -2,27 +2,66 @@
 
 .icon {
   font-family: 'FIcons', serif;
-  font-size: rem(18px);
+  font-size: rem(16px);
 }
 
 .icon-telegram:before {
   content: "\e900";
 }
+
 .icon-github:before {
   content: "\e901";
 }
+
 .icon-linkedin:before {
   content: "\e902";
 }
+
 .icon-skype:before {
   content: "\e903";
 }
+
 .icon-twitter:before {
   content: "\e904";
 }
+
 .icon-facebook:before {
   content: "\e905";
 }
+
 .icon-instagram:before {
   content: "\e906";
+}
+
+.icon-cloud-download:before {
+  content: "\e907";
+}
+
+.icon-close:before {
+  content: "\e908";
+}
+
+.icon-chevron-back-circle:before {
+  content: "\e909";
+}
+
+.icon-chevron-forward-circle:before {
+  content: "\e90a";
+}
+
+.icon-mail:before {
+  content: "\e90b";
+}
+
+.icon-link:before {
+  content: "\e90c";
+}
+
+.icon-times {
+  position: relative;
+
+  &:before,
+  &:after {
+    content: ''
+  }
 }

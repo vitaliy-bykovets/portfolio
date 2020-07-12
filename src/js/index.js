@@ -1,11 +1,29 @@
 import Conversion from './vendor/conversion.min';
 import baguetteBox from 'baguettebox.js';
-
-baguetteBox.run('.gallery');
+import Filters from './filters';
 
 window.addEventListener('load', () => {
-  document.getElementById("copyright-year").innerHTML = String(new Date().getFullYear());
+  const mainModule = new Main();
+  const filters = new Filters();
+
+  mainModule.run();
 });
+
+class Main {
+  run() {
+    baguetteBox.run('.gallery');
+    this.setCopyright();
+  }
+
+  setCopyright() {
+    const copyright = document.getElementById("copyright-year");
+    if (copyright) {
+      copyright.innerHTML = String(new Date().getFullYear());
+    }
+  }
+
+
+}
 
 // init conversion.js
 // var conversion = new Conversion({

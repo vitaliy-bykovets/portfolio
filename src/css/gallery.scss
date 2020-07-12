@@ -41,3 +41,40 @@
     }
   }
 }
+
+
+#baguetteBox-overlay {
+  background-color: rgba($primary-color, .55) !important;
+
+  .baguetteBox-button {
+    background-color: transparent;
+    font-family: 'FIcons', serif;
+    font-size: rem(40px);
+    min-width: initial;
+    transition: opacity 250ms ease-in-out;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  #previous-button:before {
+    content: "\e909";
+  }
+
+  #next-button:before {
+    content: "\e90a";
+  }
+
+  #close-button:before {
+    content: "\e908";
+  }
+
+  .full-image img {
+    box-shadow: none;
+  }
+}
