@@ -52,12 +52,12 @@
 
         <div class="contact-field">
           <p>Or just drop a few lines...</p>
-          <form>
+          <form data-form-validation>
             <div class="form-field">
-              <input type="email" id="email" name="email" required placeholder="Your email">
+              <input type="email" id="email" name="email" data-rules="required,email" placeholder="Your email">
             </div>
             <div class="form-field message-field">
-              <textarea type="message" id="message" name="message" required placeholder="Message"></textarea>
+              <textarea type="message" id="message" name="message"  data-rules="required" placeholder="Message"></textarea>
             </div>
             <div class="form-field">
               <button class="btn btn-icon" type="submit">Send <span class="icon icon-mail"></span></button>

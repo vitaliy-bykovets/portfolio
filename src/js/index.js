@@ -1,10 +1,12 @@
 import Conversion from './vendor/conversion.min';
 import baguetteBox from 'baguettebox.js';
 import Filters from './filters';
+import FormValidation from './validation';
 
 window.addEventListener('load', () => {
   const mainModule = new Main();
   const filters = new Filters();
+  const formValidation = new FormValidation();
 
   mainModule.run();
 });
