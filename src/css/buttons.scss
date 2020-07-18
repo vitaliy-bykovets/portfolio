@@ -5,6 +5,11 @@ button {
   outline: none;
   border: none;
   min-width: 120px;
+  transition: color 250ms ease-in-out;
+
+  &:hover {
+    color: $secondary-color;
+  }
 
   &:not([disabled]) {
     cursor: pointer;

@@ -4,10 +4,35 @@
 .form {
   &-field {
     width: 100%;
+    position: relative;
+    line-height: 20px;
 
     &:not(:last-child) {
       margin-bottom: 20px;
     }
+  }
+
+  .error-msg {
+    color: $error-color;
+    font-size: 12px;
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+}
+
+.form-field.is-error {
+  input,
+  textarea {
+    border-color: $error-color;
+  }
+}
+
+.form-field.is-valid {
+  .error-msg {
+    display: none;
   }
 }
 
@@ -38,6 +63,7 @@ textarea {
   width: 100%;
   resize: none;
   transition: background-color 250ms ease-in-out;
+  display: block;
 
   &:focus {
     outline: none;

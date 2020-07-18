@@ -1,4 +1,4 @@
-  
+
 <!doctype html>
 <html lang="">
 
@@ -19,7 +19,7 @@
   <main class="js-content-insert">
     <div class="about">
       <header class="header content">
-        <h1>Vitaliy Bykovets</h1>
+        <h1><a href="/">Vitaliy Bykovets</a></h1>
         <div class="divider-circle"></div>
         <span>Contact</span>
       </header>
@@ -52,12 +52,23 @@
 
         <div class="contact-field">
           <p>Or just drop a few lines...</p>
-          <form data-form-validation>
+          <form class="form" data-form-validation novalidate>
             <div class="form-field">
-              <input type="email" id="email" name="email" data-rules="required,email" placeholder="Your email">
+              <input type="email"
+                     id="email"
+                     name="email"
+                     data-rules="required,email"
+                     data-rule-required-msg="Email can't be empty"
+                     data-rule-email-msg="Uh.. Seems an email is incorrect"
+                     placeholder="Your email" >
             </div>
-            <div class="form-field message-field">
-              <textarea type="message" id="message" name="message"  data-rules="required" placeholder="Message"></textarea>
+            <div class="form-field">
+              <textarea type="message"
+                        id="message"
+                        name="message"
+                        data-rules="required"
+                        data-rule-required-msg="Please type the message"
+                        placeholder="Message"></textarea>
             </div>
             <div class="form-field">
               <button class="btn btn-icon" type="submit">Send <span class="icon icon-mail"></span></button>
