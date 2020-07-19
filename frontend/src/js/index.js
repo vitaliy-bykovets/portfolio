@@ -6,10 +6,47 @@ import FormValidation from './validation';
 window.addEventListener('load', () => {
   const mainModule = new Main();
   const filters = new Filters();
-  const formValidation = new FormValidation();
+  const contactFormValidation = new FormValidation('#contact-form');
+  
+  const contactForm = document.getElementById('contact-form');
+
+  if (contactForm) {
+    const formUrl = contactForm.getAttribute('data-form-action');
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!contactFormValidation.isFormValid) {
+        return null;
+      }
+
+      const data = {};
+
+      for (let i = 0; i < contactForm.elements.length; i++) {
+        if (contactForm.elements[i].name && contactForm.elements[i].value) {
+          data[contactForm.elements[i].name] = contactForm.elements[i].value;
+        }
+      }
+
+      const result = await postData(formUrl, data);
+      console.log('********* - 31', result);
+    });
+  }
 
   mainModule.run();
 });
+
+async function postData(url = '', data = {}) {
+
+  const response = await fetch(url, {
+    method: 'POST',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  });
+  return response.json();
+}
 
 class Main {
   run() {

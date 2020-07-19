@@ -6,33 +6,34 @@ class RuleValidation {
 }
 
 export default class FormValidation {
-  constructor(options) {
+  constructor(formSelector, options) {
+    if (!formSelector) {
+      console.error('Form Validation construct requires form selector')
+      return null;
+    }
     this.dom = {};
     this.dom.body = document.body;
-    this.dom.forms = document.querySelectorAll('[data-form-validation]');
+    this.dom.form = document.querySelector(formSelector);
 
     this.init();
     this.isFormValid = true;
   }
   
   init() {
-    if (!this.dom.forms) return null;
+    if (!this.dom.form) return null;
 
-    this.dom.forms.forEach((form) => {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const target = e.target;
-        const fields = target.querySelectorAll('[data-rules]');
+    this.dom.form.addEventListener('submit', (e) => {
+      const target = e.target;
+      const fields = target.querySelectorAll('[data-rules]');
 
-        fields.forEach((field) => {
-          const rules = field.getAttribute('data-rules').split(',');
-          const isValidArr = this.fieldValidation(field, rules);
-          const fieldParentEl = field.parentElement;
-          this.isFormValid = isValidArr.every(r => r.isValid === true);
-          isValidArr.forEach(r => this.handleRuleMessage(fieldParentEl, field, r));
-        })
-      });
-    })
+      fields.forEach((field) => {
+        const rules = field.getAttribute('data-rules').split(',');
+        const isValidArr = this.fieldValidation(field, rules);
+        const fieldParentEl = field.parentElement;
+        this.isFormValid = isValidArr.every(r => r.isValid === true);
+        isValidArr.forEach(r => this.handleRuleMessage(fieldParentEl, field, r));
+      })
+    });
   }
 
   handleRuleMessage(fieldParentEl, field, rule) {
