@@ -13,6 +13,16 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./images/favicons/favicon-16x16.png">
 
   <meta name="theme-color" content="#fafafa">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173060689-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-173060689-1');
+  </script>
+
 </head>
 
 <body>
@@ -71,7 +81,10 @@
                         placeholder="Message"></textarea>
             </div>
             <div class="form-field">
-              <button class="btn btn-icon" type="submit">Send <span class="icon icon-mail"></span></button>
+              <button class="btn btn-icon g-recaptcha"
+                      data-sitekey="6LdTyLMZAAAAADKaJt96-F0Li68sRhOkQuW-VPVS"
+                      data-callback="onSubmit"
+                      data-action="submit" type="submit">Send <span class="icon icon-mail"></span></button>
             </div>
           </form>
         </div>
@@ -104,5 +117,14 @@
     <div class="transition-content"></div>
   </div>
 </body>
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+  function onSubmit(token) {
+    const event = new Event('submit');
+    const form = document.getElementById("contact-form");
+    if (form) form.dispatchEvent(event);
+  }
+</script>
 
 </html>
